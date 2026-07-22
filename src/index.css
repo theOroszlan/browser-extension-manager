@@ -87,3 +87,12 @@ body {
   font-family: var(--font-family-base), sans-serif;
   font-size: var(--fs-base);
 }
+
+.btn {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--red-700);
+  }
+}
