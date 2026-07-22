@@ -48,10 +48,13 @@
   --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+  --header-bg: var(--neutral-0);
+  --logo-color: #091540;
+  --theme-btn-bg: var(--neutral-100);
+
   /*===================
         TYPOGRAPHY
   ===================*/
-
   /* font family */
   --font-family-base: "Noto Sans";
 
@@ -86,6 +89,8 @@
 body {
   font-family: var(--font-family-base), sans-serif;
   font-size: var(--fs-base);
+  background: var(--light-gradient);
+  min-height: 100vh;
 }
 
 .btn {
@@ -95,4 +100,26 @@ body {
     outline: none;
     border: 2px solid var(--red-700);
   }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--header-bg);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.logo {
+  color: var(--logo-color);
+}
+
+.theme-btn {
+  background-color: var(--theme-btn-bg);
+  border: none;
+  padding: var(--space-xs);
+  border-radius: 0.5rem;
 }
