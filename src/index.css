@@ -123,3 +123,94 @@ header {
   padding: var(--space-xs);
   border-radius: 0.5rem;
 }
+
+.extension {
+  display: grid;
+  gap: var(--space-lg);
+
+  background-color: var(--header-bg);
+  padding: var(--space-sm);
+  border-radius: 1rem;
+}
+
+.extension-info {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.extension-logo {
+  align-self: flex-start;
+}
+
+.extension-title {
+  margin-block-end: var(--space-xs);
+}
+
+.extension-text {
+  font-size: var(--fs-sm);
+}
+
+.extension-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-btn {
+  background-color: inherit;
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-sm);
+  border: 2px solid var(--neutral-100);
+  border-radius: 1.5rem;
+
+  font-size: var(--fs-sm);
+  font-weight: var(--font-weight-medium);
+
+  &:focus-visible {
+    background-color: var(--neutral-300);
+    border-color: var(--red-500);
+  }
+
+  &:hover {
+    background-color: var(--red-500);
+    border-color: var(--red-500);
+  }
+}
+
+.toggle-status {
+  display: flex;
+
+  background-color: var(--neutral-300);
+  padding: 0.1rem;
+  border: none;
+  border-radius: 1rem;
+  width: 2.2rem;
+  height: 1.15rem;
+
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
+}
+
+.focus-state:has(.toggle-status:focus-visible) {
+  padding: 0.1rem;
+  border: 1px solid var(--red-700);
+  border-radius: 1rem;
+}
+
+.toggle-status.active {
+  background-color: var(--red-500);
+  justify-content: end;
+
+  &:hover {
+    background-color: var(--red-400);
+  }
+}
+
+.toggle-status span {
+  background-color: var(--neutral-0);
+  height: 100%;
+  width: 1rem;
+  border-radius: 50%;
+}

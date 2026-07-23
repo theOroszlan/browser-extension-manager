@@ -1,0 +1,37 @@
+import Button from "./Button";
+
+function ExtensionCard({ extension, onRemove, onToggle, className = "" }) {
+  if (!extension) {
+    return null;
+  }
+  const { logo, name, description, isActive } = extension;
+
+  return (
+    <div className={`extension ${className}`}>
+      <div className="extension-info">
+        <img className="extension-logo" src={logo} alt={`${name} logo`} />
+
+        <div>
+          <h2 className="extension-title">{name}</h2>
+          <p className="extension-text">{description}</p>
+        </div>
+      </div>
+      <div className="extension-actions">
+        <Button className="remove-btn" onClick={onRemove}>
+          Remove
+        </Button>
+        <div className="focus-state">
+          <Button
+            className={`toggle-status ${isActive ? "active" : ""}`}
+            aria-label={isActive ? `Deactivate ${name}` : `Activate ${name}`}
+            onClick={onToggle}
+          >
+            <span></span>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ExtensionCard;
