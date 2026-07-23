@@ -80,6 +80,7 @@
         SPACING
   ===================*/
 
+  --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -122,6 +123,37 @@ header {
   border: none;
   padding: var(--space-xs);
   border-radius: 0.5rem;
+}
+
+main {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.main-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.filter-btn {
+  padding-inline: var(--space-xs);
+  padding-block: var(--space-2xs);
+  border: 1px solid var(--neutral-200);
+  border-radius: 1rem;
+
+  font-size: var(--fs-base);
+}
+
+.focus-state:has(.filter-btn:focus-visible) {
+  padding: 0.1rem;
+  border: 1px solid var(--red-700);
+  border-radius: 1rem;
 }
 
 .extension {
