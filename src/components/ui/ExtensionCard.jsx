@@ -4,7 +4,7 @@ function ExtensionCard({ extension, onRemove, onToggle, className = "" }) {
   if (!extension) {
     return null;
   }
-  const { logo, name, description, isActive } = extension;
+  const { id, logo, name, description, isActive } = extension;
 
   return (
     <div className={`extension ${className}`}>
@@ -17,14 +17,14 @@ function ExtensionCard({ extension, onRemove, onToggle, className = "" }) {
         </div>
       </div>
       <div className="extension-actions">
-        <Button className="remove-btn" onClick={onRemove}>
+        <Button className="remove-btn" onClick={() => onRemove(id)}>
           Remove
         </Button>
         <div className="focus-state">
           <Button
             className={`toggle-status ${isActive ? "active" : ""}`}
             aria-label={isActive ? `Deactivate ${name}` : `Activate ${name}`}
-            onClick={onToggle}
+            onClick={() => onToggle(id)}
           >
             <span></span>
           </Button>

@@ -48,8 +48,11 @@
   --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
-  --header-bg: var(--neutral-0);
-  --logo-color: #091540;
+  --primary-clr: var(--neutral-900);
+  --background-clr: var(--neutral-0);
+  --secondary-bg-clr: var(--neutral-300);
+  --filter-btn-clr: var(--neutral-0);
+  --extension-text-clr: var(--neutral-600);
   --theme-btn-bg: var(--neutral-100);
 
   /*===================
@@ -94,6 +97,22 @@ body {
   min-height: 100vh;
 }
 
+body.dark {
+  --background-clr: var(--neutral-800);
+  --secondary-bg-clr: var(--neutral-600);
+  --primary-clr: var(--neutral-0);
+  --filter-btn-clr: var(--neutral-900);
+  --extension-text-clr: var(--neutral-300);
+  --theme-btn-bg: var(--neutral-700);
+
+  background: var(--dark-gradient);
+}
+
+#root {
+  display: grid;
+  place-items: center;
+}
+
 .btn {
   cursor: pointer;
 
@@ -103,11 +122,19 @@ body {
   }
 }
 
+.wrapper {
+  display: grid;
+  gap: var(--space-lg);
+
+  padding-block: var(--space-lg);
+  width: 80%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
 
-  background-color: var(--header-bg);
+  background-color: var(--background-clr);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
   border-radius: 1rem;
@@ -115,7 +142,7 @@ header {
 }
 
 .logo {
-  color: var(--logo-color);
+  color: var(--primary-clr);
 }
 
 .theme-btn {
@@ -132,8 +159,9 @@ main {
 
 .main-heading {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+
+  color: var(--primary-clr);
 }
 
 .filter-buttons {
@@ -142,6 +170,8 @@ main {
 }
 
 .filter-btn {
+  background-color: var(--background-clr);
+  color: var(--primary-clr);
   padding-inline: var(--space-xs);
   padding-block: var(--space-2xs);
   border: 1px solid var(--neutral-200);
@@ -150,17 +180,29 @@ main {
   font-size: var(--fs-base);
 }
 
+.filter-btn.current {
+  background-color: var(--red-700);
+  color: var(--filter-btn-clr);
+  border-color: var(--red-700);
+}
+
 .focus-state:has(.filter-btn:focus-visible) {
   padding: 0.1rem;
   border: 1px solid var(--red-700);
   border-radius: 1rem;
 }
 
+.extensions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(315px, 100%), 1fr));
+  gap: var(--space-xs);
+}
+
 .extension {
   display: grid;
   gap: var(--space-lg);
 
-  background-color: var(--header-bg);
+  background-color: var(--background-clr);
   padding: var(--space-sm);
   border-radius: 1rem;
 }
@@ -175,10 +217,12 @@ main {
 }
 
 .extension-title {
+  color: var(--primary-clr);
   margin-block-end: var(--space-xs);
 }
 
 .extension-text {
+  color: var(--extension-text-clr);
   font-size: var(--fs-sm);
 }
 
@@ -190,6 +234,7 @@ main {
 
 .remove-btn {
   background-color: inherit;
+  color: var(--primary-clr);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
   border: 2px solid var(--neutral-100);
@@ -199,7 +244,7 @@ main {
   font-weight: var(--font-weight-medium);
 
   &:focus-visible {
-    background-color: var(--neutral-300);
+    background-color: var(--secondary-bg-clr);
     border-color: var(--red-500);
   }
 
@@ -212,7 +257,7 @@ main {
 .toggle-status {
   display: flex;
 
-  background-color: var(--neutral-300);
+  background-color: var(--secondary-bg-clr);
   padding: 0.1rem;
   border: none;
   border-radius: 1rem;
