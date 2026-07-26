@@ -17,7 +17,11 @@ function ExtensionCard({ extension, onRemove, onToggle, className = "" }) {
         </div>
       </div>
       <div className="extension-actions">
-        <Button className="remove-btn" onClick={() => onRemove(id)}>
+        <Button
+          className="remove-btn"
+          aria-label={`Remove ${name}`}
+          onClick={() => onRemove(id)}
+        >
           Remove
         </Button>
         <div className="focus-state">
