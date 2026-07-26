@@ -252,7 +252,7 @@ main {
 
 .extension-title {
   color: var(--primary-clr);
-  margin-block-end: var(--space-xs);
+  margin-block-end: var(--space-2xs);
 }
 
 .extension-text {
