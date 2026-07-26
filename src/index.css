@@ -48,12 +48,17 @@
   --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+  /* Theme Based Colors */
   --primary-clr: var(--neutral-900);
   --background-clr: var(--neutral-0);
-  --secondary-bg-clr: var(--neutral-300);
-  --filter-btn-clr: var(--neutral-0);
   --extension-text-clr: var(--neutral-600);
   --theme-btn-bg: var(--neutral-100);
+
+  --accent-text: var(--neutral-0);
+  --interactive: var(--red-700);
+  --interactive-hover: var(--red-500);
+  --interactive-subtle: var(--neutral-300);
+  --interactive-subtle-hover: var(--neutral-100);
 
   /*===================
         TYPOGRAPHY
@@ -99,11 +104,15 @@ body {
 
 body.dark {
   --background-clr: var(--neutral-800);
-  --secondary-bg-clr: var(--neutral-600);
   --primary-clr: var(--neutral-0);
-  --filter-btn-clr: var(--neutral-900);
   --extension-text-clr: var(--neutral-300);
   --theme-btn-bg: var(--neutral-700);
+
+  --accent-text: var(--neutral-900);
+  --interactive: var(--red-500);
+  --interactive-hover: var(--red-700);
+  --interactive-subtle: var(--neutral-600);
+  --interactive-subtle-hover: var(--interactive-subtle);
 
   background: var(--dark-gradient);
 }
@@ -118,7 +127,6 @@ body.dark {
 
   &:focus {
     outline: none;
-    border: 2px solid var(--red-700);
   }
 }
 
@@ -148,8 +156,18 @@ header {
 .theme-btn {
   background-color: var(--theme-btn-bg);
   border: none;
-  padding: var(--space-xs);
+  padding-block: var(--space-xs);
+  padding-inline: 0.75rem;
   border-radius: 0.5rem;
+
+  &:focus-visible {
+    background-color: var(--interactive-subtle-hover);
+    border: 2px solid var(--red-500);
+  }
+
+  &:hover {
+    background-color: var(--interactive-subtle);
+  }
 }
 
 main {
@@ -160,6 +178,7 @@ main {
 .main-heading {
   display: flex;
   flex-direction: column;
+  gap: var(--space-sm);
 
   color: var(--primary-clr);
 }
@@ -167,29 +186,38 @@ main {
 .filter-buttons {
   display: flex;
   gap: var(--space-xs);
+  align-items: center;
 }
 
 .filter-btn {
   background-color: var(--background-clr);
   color: var(--primary-clr);
-  padding-inline: var(--space-xs);
-  padding-block: var(--space-2xs);
-  border: 1px solid var(--neutral-200);
-  border-radius: 1rem;
+  padding-inline: var(--space-sm);
+  padding-block: var(--space-xs);
+  border: none;
+  border-radius: 1.5rem;
 
   font-size: var(--fs-base);
+
+  &:focus-visible,
+  &:hover {
+    background-color: var(--interactive-subtle-hover);
+  }
 }
 
 .filter-btn.current {
-  background-color: var(--red-700);
-  color: var(--filter-btn-clr);
-  border-color: var(--red-700);
+  background-color: var(--interactive);
+  color: var(--accent-text);
+
+  &:hover {
+    background-color: var(--interactive-hover);
+  }
 }
 
 .focus-state:has(.filter-btn:focus-visible) {
   padding: 0.1rem;
-  border: 1px solid var(--red-700);
-  border-radius: 1rem;
+  border: 2px solid var(--red-500);
+  border-radius: 1.5rem;
 }
 
 .extensions-grid {
@@ -237,27 +265,28 @@ main {
   color: var(--primary-clr);
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
-  border: 2px solid var(--neutral-100);
+  border: 1px solid var(--interactive-subtle);
   border-radius: 1.5rem;
 
   font-size: var(--fs-sm);
   font-weight: var(--font-weight-medium);
 
   &:focus-visible {
-    background-color: var(--secondary-bg-clr);
-    border-color: var(--red-500);
+    background-color: var(--interactive-subtle-hover);
+    border: 2px solid var(--interactive);
   }
 
   &:hover {
-    background-color: var(--red-500);
-    border-color: var(--red-500);
+    background-color: var(--interactive);
+    border-color: var(--interactive);
+    color: var(--accent-text);
   }
 }
 
 .toggle-status {
   display: flex;
 
-  background-color: var(--secondary-bg-clr);
+  background-color: var(--interactive-subtle);
   padding: 0.1rem;
   border: none;
   border-radius: 1rem;
@@ -272,16 +301,16 @@ main {
 
 .focus-state:has(.toggle-status:focus-visible) {
   padding: 0.1rem;
-  border: 1px solid var(--red-700);
+  border: 2px solid var(--red-500);
   border-radius: 1rem;
 }
 
 .toggle-status.active {
-  background-color: var(--red-500);
+  background-color: var(--interactive);
   justify-content: end;
 
   &:hover {
-    background-color: var(--red-400);
+    background-color: var(--interactive-hover);
   }
 }
 
