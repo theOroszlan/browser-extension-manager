@@ -6,8 +6,10 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -23,6 +25,22 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
+### Screenshots
+
+<details open>
+<summary><strong>Desktop Dark Mode</strong></summary>
+
+![Desktop Dark Mode](./screenshots/Screenshot-dark.png)
+
+</details>
+
+<details>
+<summary><strong>Desktop Light Mode</strong></summary>
+
+![Desktop Light Mode](./screenshots/Screenshot-light.png)
+
+</details>
+
 ## My process
 
 ### Built with
@@ -32,7 +50,13 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- React - JS library
+
+### What I learned
+
+- Managing application state in a parent component and passing data through props.
+- Updating arrays in React using `map()` and `filter()`.
+- Implementing light and dark themes using CSS custom properties.
 
 ## Author
 
