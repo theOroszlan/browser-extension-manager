@@ -319,7 +319,6 @@ main {
 
 .toggle-status.active {
   background-color: var(--interactive);
-  justify-content: end;
 
   &:hover {
     background-color: var(--interactive-hover);
@@ -331,4 +330,10 @@ main {
   height: 100%;
   width: 1rem;
   border-radius: 50%;
+
+  transition: transform 0.3s ease;
+}
+
+.toggle-status.active span {
+  transform: translateX(100%);
 }
