@@ -60,6 +60,8 @@
   --interactive-subtle: var(--neutral-300);
   --interactive-subtle-hover: var(--neutral-100);
 
+  --shadow-clr: rgba(0, 0, 0, 0.08);
+
   /*===================
         TYPOGRAPHY
   ===================*/
@@ -113,6 +115,8 @@ body.dark {
   --interactive-hover: var(--red-700);
   --interactive-subtle: var(--neutral-600);
   --interactive-subtle-hover: var(--interactive-subtle);
+
+  --shadow-clr: rgba(255, 255, 255, 0.2);
 
   background: var(--dark-gradient);
 }
@@ -239,6 +243,8 @@ main {
   background-color: var(--background-clr);
   padding: var(--space-sm);
   border-radius: 1rem;
+
+  box-shadow: 0 0 0 1px var(--shadow-clr);
 }
 
 .extension-info {
