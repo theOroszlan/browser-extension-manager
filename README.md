@@ -30,14 +30,14 @@ Users should be able to:
 <details open>
 <summary><strong>Desktop Dark Mode</strong></summary>
 
-![Desktop Dark Mode](./screenshots/Screenshot-dark.png)
+![Desktop Dark Mode](./screenshots/Screenshot-desktop-dark.png)
 
 </details>
 
 <details>
 <summary><strong>Desktop Light Mode</strong></summary>
 
-![Desktop Light Mode](./screenshots/Screenshot-light.png)
+![Desktop Light Mode](./screenshots/Screenshot-desktop-light.png)
 
 </details>
 
