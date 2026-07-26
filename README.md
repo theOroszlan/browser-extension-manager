@@ -7,6 +7,7 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshots](#screenshots)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -40,6 +41,10 @@ Users should be able to:
 ![Desktop Light Mode](./screenshots/Screenshot-desktop-light.png)
 
 </details>
+
+### Links
+
+- Live Site URL: [Browser Extension Manager](https://browser-extension-manager-tau.vercel.app/)
 
 ## My process
 
