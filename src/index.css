@@ -121,7 +121,7 @@ body.dark {
   background: var(--dark-gradient);
 }
 
-#root {
+div#root {
   display: grid;
   place-items: center;
 }
@@ -141,6 +141,10 @@ body.dark {
   padding-block: var(--space-lg);
   width: 80%;
 }
+
+/*===================
+        HEADER
+  ===================*/
 
 header {
   display: flex;
@@ -173,6 +177,10 @@ header {
     background-color: var(--interactive-subtle);
   }
 }
+
+/*==================
+        MAIN
+  ==================*/
 
 main {
   display: grid;
@@ -235,6 +243,10 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(min(315px, 100%), 1fr));
   gap: var(--space-xs);
 }
+
+/*=========================
+        EXTENSION CARD
+  ==========================*/
 
 .extension {
   display: grid;
